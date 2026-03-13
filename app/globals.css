@@ -4,116 +4,62 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ========================================
+   DESIGN TOKENS — Arsensan Portfolio
+   ======================================== */
+
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
-}
+  /* --- Project palette --- */
+  --color-ivory: #F5F0EB;
+  --color-ivory-warm: #EDE7E0;
+  --color-graphite: #1C1917;
+  --color-graphite-soft: #44403C;
+  --color-indigo: #4338CA;
+  --color-indigo-light: #6366F1;
+  --color-indigo-deep: #312E81;
 
-:root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.809 0.105 251.813);
-  --chart-2: oklch(0.623 0.214 259.815);
-  --chart-3: oklch(0.546 0.245 262.881);
-  --chart-4: oklch(0.488 0.243 264.376);
-  --chart-5: oklch(0.424 0.199 265.638);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
+  /* --- Functional semantic tokens --- */
+  --color-surface: var(--color-ivory);
+  --color-surface-alt: var(--color-ivory-warm);
+  --color-on-surface: var(--color-graphite);
+  --color-on-surface-muted: var(--color-graphite-soft);
+  --color-accent: var(--color-indigo);
+  --color-accent-hover: var(--color-indigo-light);
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.809 0.105 251.813);
-  --chart-2: oklch(0.623 0.214 259.815);
-  --chart-3: oklch(0.546 0.245 262.881);
-  --chart-4: oklch(0.488 0.243 264.376);
-  --chart-5: oklch(0.424 0.199 265.638);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* --- Dark section colors (checkout, etc.) --- */
+  --color-surface-dark: #0F0D0A;
+  --color-surface-dark-alt: #1C1917;
+  --color-on-dark: #F5F0EB;
+  --color-on-dark-muted: #A8A29E;
+
+  /* --- shadcn overrides --- */
+  --color-background: var(--color-ivory);
+  --color-foreground: var(--color-graphite);
+  --color-primary: var(--color-indigo);
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: var(--color-ivory-warm);
+  --color-secondary-foreground: var(--color-graphite);
+  --color-muted: var(--color-ivory-warm);
+  --color-muted-foreground: var(--color-graphite-soft);
+  --color-card: var(--color-ivory);
+  --color-card-foreground: var(--color-graphite);
+  --color-popover: var(--color-ivory);
+  --color-popover-foreground: var(--color-graphite);
+  --color-border: #D6D3D1;
+  --color-input: #D6D3D1;
+  --color-ring: var(--color-indigo);
+  --color-destructive: #DC2626;
+  --color-accent-foreground: var(--color-graphite);
+
+
+  /* --- Radius (premium = larger) --- */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-3xl: 2.5rem;
+  --radius-4xl: 3rem;
 }
 
 @layer base {
@@ -125,5 +71,34 @@
   }
   html {
     @apply font-sans;
+    scroll-behavior: auto; /* Lenis handles smooth scroll */
   }
+
+  /* Heading font utility */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* ========================================
+   FILM GRAIN — Animated Noise Overlay
+   ======================================== */
+
+@keyframes grain {
+  0%   { transform: translate(-5%,  -8%);  }
+  10%  { transform: translate(12%,   3%);  }
+  20%  { transform: translate(-3%,  15%);  }
+  30%  { transform: translate(8%,  -12%);  }
+  40%  { transform: translate(-15%,  5%);  }
+  50%  { transform: translate(5%,  -3%);   }
+  60%  { transform: translate(-8%,  10%);  }
+  70%  { transform: translate(15%, -5%);   }
+  80%  { transform: translate(-10%, -15%); }
+  90%  { transform: translate(3%,   8%);   }
+  100% { transform: translate(-5%,  -8%);  }
+}
+
+.animate-grain {
+  animation: grain 1s steps(10) infinite;
+  will-change: transform;
 }
