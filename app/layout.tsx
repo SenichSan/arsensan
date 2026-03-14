@@ -14,11 +14,10 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
-/* ── Serif font — Playfair Display for intro/accent text ── */
 const playfairDisplay = Playfair_Display({
   variable: "--font-serif",
   subsets: ["latin", "latin-ext"],
-  weight: ["400"],
+  weight: ["400", "500"],
   style: ["normal", "italic"],
   display: "swap",
 });

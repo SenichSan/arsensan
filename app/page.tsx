@@ -8,7 +8,7 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center w-full max-w-[95vw] z-10 pointer-events-auto">
           
           <p
-            className="w-[50%] text-center mb-6 md:mb-10 text-sm leading-[1.1] opacity-75 normal-case font-normal md:text-base"
+            className="w-[50%] text-center mb-6 md:mb-10 text-base leading-[1.1] opacity-75 normal-case font-medium md:text-lg"
             style={{ fontFamily: "var(--font-serif)" }}
           >
             I&apos;m an independent creative designer &amp; developer who builds
