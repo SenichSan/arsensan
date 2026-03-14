@@ -1,27 +1,40 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Montserrat, Playfair_Display, Geist } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 import NoiseOverlay from "@/components/NoiseOverlay";
+import Navbar from "@/components/Navbar";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-heading",
+/* ── Display font — Montserrat Black (weight 900) for H1 ── */
+const montserrat = Montserrat({
+  variable: "--font-display",
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700"],
+  weight: "900",
   display: "swap",
 });
 
-const inter = Inter({
+/* ── Serif font — Playfair Display for intro/accent text ── */
+const playfairDisplay = Playfair_Display({
+  variable: "--font-serif",
+  subsets: ["latin", "latin-ext"],
+  weight: ["400"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+/* ── Body font — Geist for UI and Navigation ── */
+const geist = Geist({
   variable: "--font-sans",
   subsets: ["latin", "latin-ext"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Arsen San — Премиальная разработка интернет-магазинов",
+  title: "Arsen San — Premium E‑Commerce Development",
   description:
-    "Разработка кастомных e-commerce решений, которые продают статус и генерируют прибыль. UI/UX дизайн, фронтенд с WebGL/Motion, headless backend.",
+    "Custom e-commerce solutions that sell status and generate profit. UI/UX design, frontend with WebGL/Motion, headless backend.",
 };
 
 export default function RootLayout({
@@ -30,16 +43,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className={`${spaceGrotesk.variable} ${inter.variable}`}>
+    <html
+      lang="en"
+      className={`${montserrat.variable} ${playfairDisplay.variable} ${geist.variable}`}
+    >
       <body className="font-sans antialiased bg-ivory text-graphite">
-        {/* Animated film grain — SVG feTurbulence + CSS steps() */}
         <NoiseOverlay />
-
-        {/* Premium custom cursor — mix-blend-mode: difference */}
         <CustomCursor />
-
-        {/* Lenis smooth scroll wraps all page content */}
-        <SmoothScroll>{children}</SmoothScroll>
+        <SmoothScroll>
+          <Navbar />
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

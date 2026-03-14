@@ -1,25 +1,69 @@
 export default function Home() {
   return (
-    <main>
-      {/* ─── Блок 1: Hero Section (Импульс) ─── */}
-      <section
-        id="hero"
-        className="relative min-h-screen flex items-center justify-center"
-      >
-        <div className="text-center space-y-4">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-indigo/10 text-indigo text-sm font-medium font-heading tracking-wide">
-            Свободен для 1 проекта в марте
-          </span>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold leading-[0.95] tracking-tight">
-            Премиальные
-            <br />
-            интернет-магазины
-          </h1>
-          <p className="max-w-xl mx-auto text-lg text-on-surface-muted">
-            Которые продают статус и генерируют прибыль
+    <main className="relative flex flex-col items-center min-h-screen w-full z-10 bg-transparent text-graphite">
+      {/* ── Landing Container (equivalent to page_landingContainer) ── */}
+      <div className="relative w-full h-screen overflow-hidden pointer-events-none flex flex-col items-center justify-center">
+        
+        {/* ── Central Content (equivalent to page_heading_and_button) ── */}
+        <div className="flex flex-col items-center justify-center w-full max-w-[95vw] z-10 pointer-events-auto">
+          
+          <p
+            className="w-[50%] text-center mb-6 md:mb-10 text-sm leading-[1.1] opacity-75 normal-case font-normal md:text-base"
+            style={{ fontFamily: "var(--font-serif)" }}
+          >
+            I&apos;m an independent creative designer &amp; developer who builds
+            custom digital experiences through modern typography and unique
+            interactions. I work with clients who want to stand out with
+            unconventional and bold design and interactivity. Driven by craft, my
+            work is rooted in purpose.
           </p>
+
+          <div className="w-full flex justify-center">
+            <h1
+              className="w-full text-center text-[10vw] leading-[1] tracking-tighter uppercase font-black text-graphite"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              CREATING FOR A<br />
+              HIGHER PURPOSE
+            </h1>
+          </div>
+
+          <a
+            href="#contact"
+            data-cursor="hover"
+            className="mt-8 md:mt-12 group inline-flex items-center gap-3 rounded-full bg-graphite px-7 py-3 text-[11px] font-medium uppercase tracking-widest text-ivory transition-all duration-300 hover:bg-indigo"
+            style={{ fontFamily: "var(--font-sans)" }}
+          >
+            LET&apos;S TALK!
+            <span className="inline-block transition-transform duration-300 group-hover:rotate-45">
+              +
+            </span>
+          </a>
         </div>
-      </section>
+
+        {/* ── Footer Info (equivalent to page_video_container > page_extra_info) ── */}
+        <div className="absolute bottom-0 left-0 w-full flex justify-between items-end p-6 md:p-8 z-50 pointer-events-auto">
+          <h5
+            className="text-[11px] font-medium uppercase tracking-widest text-graphite"
+            style={{ fontFamily: "var(--font-sans)" }}
+          >
+            ARSEN SAN
+          </h5>
+          <h5
+            className="hidden md:block absolute left-1/2 -translate-x-1/2 bottom-6 md:bottom-8 text-[10px] uppercase tracking-wider text-graphite-soft opacity-50 text-center"
+            style={{ fontFamily: "var(--font-sans)" }}
+          >
+            [FREELANCE CREATIVE DEVELOPER]
+          </h5>
+          <h5
+            className="text-[11px] uppercase tracking-wider text-graphite-soft"
+            style={{ fontFamily: "var(--font-sans)" }}
+          >
+            REMOTE, UA
+          </h5>
+        </div>
+
+      </div>
 
       {/* ─── Блок 2: Идентификация (Боли) ─── */}
       <section

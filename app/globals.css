@@ -71,12 +71,13 @@
   }
   html {
     @apply font-sans;
+    --font-serif: "Didot", "Bodoni MT", "Times New Roman", serif;
     scroll-behavior: auto; /* Lenis handles smooth scroll */
   }
 
-  /* Heading font utility */
+  /* Display font for massive headlines */
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
+    font-family: var(--font-display), sans-serif;
   }
 }
 
