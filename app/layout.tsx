@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Playfair_Display, Geist, Bebas_Neue } from "next/font/google";
+import { Montserrat, Playfair_Display, Geist, Bebas_Neue, Space_Grotesk } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 import NoiseOverlay from "@/components/NoiseOverlay";
@@ -38,6 +38,14 @@ const bebasNeue = Bebas_Neue({
   display: "swap",
 });
 
+/* ── Space Grotesk ── */
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-grotesk",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Arsen San — Premium E‑Commerce Development",
   description:
@@ -52,7 +60,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${montserrat.variable} ${playfairDisplay.variable} ${geist.variable} ${bebasNeue.variable}`}
+      className={`${montserrat.variable} ${playfairDisplay.variable} ${geist.variable} ${bebasNeue.variable} ${spaceGrotesk.variable}`}
     >
       <body className="font-sans antialiased bg-ivory text-graphite">
         <CustomCursor />

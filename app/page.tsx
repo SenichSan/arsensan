@@ -9,7 +9,7 @@ export default function Home() {
           
           <p
             className="w-[50%] text-center mb-6 md:mb-10 leading-[1.1] opacity-75 normal-case font-medium"
-            style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(1rem, 0.3vw + 1.1rem, 1.45rem)" }}
+            style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(1rem, 0.3vw + 1.1rem, 1.45rem)", textShadow: "0 -1px 0 rgba(255,255,255,0.6), 0 1px 2px rgba(28,25,23,0.08)" }}
           >
             I&apos;m an independent creative designer &amp; developer who builds
             custom digital experiences through modern typography and unique

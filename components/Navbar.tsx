@@ -35,8 +35,12 @@ export default function Navbar() {
             ARSEN<br />SAN
           </a>
           <h5
-            className="hidden md:block text-[10px] uppercase tracking-wider text-graphite-soft mt-0.5"
-            style={{ fontFamily: "var(--font-sans)" }}
+            className="hidden md:block uppercase tracking-wider text-graphite-soft mt-0.5"
+            style={{ 
+              fontFamily: "var(--font-grotesk)", 
+              fontWeight: 700,
+              fontSize: "clamp(0.6rem, 0.2vw + 0.65rem, 0.8125rem)" // ~13px on desktop, scaling between ~10px and ~13px
+            }}
           >
             [AVAILABLE FOR WORK APRIL, 2026]
           </h5>
@@ -52,8 +56,8 @@ export default function Navbar() {
               <a
                 href={href}
                 data-cursor="hover"
-                className="text-[14px] font-normal uppercase tracking-[0.2em] text-graphite transition-opacity duration-200 hover:opacity-40"
-                style={{ fontFamily: "var(--font-nav)" }}
+                className="text-[14px] uppercase tracking-[0.2em] text-graphite opacity-[0.6] transition-opacity duration-200 hover:opacity-40"
+                style={{ fontFamily: "\"Montserrat\", \"Montserrat Fallback\", sans-serif", fontWeight: 800 }}
               >
                 {label}
               </a>
