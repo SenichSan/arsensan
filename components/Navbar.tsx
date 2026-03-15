@@ -52,8 +52,8 @@ export default function Navbar() {
               <a
                 href={href}
                 data-cursor="hover"
-                className="text-[11px] font-semibold uppercase tracking-wider text-graphite transition-opacity duration-200 hover:opacity-40"
-                style={{ fontFamily: "'forma-djr-display', sans-serif" }}
+                className="text-[14px] font-normal uppercase tracking-[0.2em] text-graphite transition-opacity duration-200 hover:opacity-40"
+                style={{ fontFamily: "var(--font-nav)" }}
               >
                 {label}
               </a>

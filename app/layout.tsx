@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Playfair_Display, Geist } from "next/font/google";
+import { Montserrat, Playfair_Display, Geist, Bebas_Neue } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 import NoiseOverlay from "@/components/NoiseOverlay";
@@ -30,6 +30,14 @@ const geist = Geist({
   display: "swap",
 });
 
+/* ── Nav font — Bebas Neue for Header Links ── */
+const bebasNeue = Bebas_Neue({
+  variable: "--font-nav",
+  subsets: ["latin", "latin-ext"],
+  weight: ["400"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Arsen San — Premium E‑Commerce Development",
   description:
@@ -44,7 +52,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${montserrat.variable} ${playfairDisplay.variable} ${geist.variable}`}
+      className={`${montserrat.variable} ${playfairDisplay.variable} ${geist.variable} ${bebasNeue.variable}`}
     >
       <body className="font-sans antialiased bg-ivory text-graphite">
         <NoiseOverlay />
