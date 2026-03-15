@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="relative flex flex-col items-center min-h-screen w-full z-10 bg-transparent text-graphite">
+    <main className="relative flex flex-col items-center min-h-screen w-full bg-transparent text-graphite">
       {/* ── Landing Container (equivalent to page_landingContainer) ── */}
       <div className="relative w-full h-screen overflow-hidden pointer-events-none flex flex-col items-center justify-center">
         
@@ -8,8 +8,8 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center w-full max-w-[95vw] z-10 pointer-events-auto">
           
           <p
-            className="w-[50%] text-center mb-6 md:mb-10 text-base leading-[1.1] opacity-75 normal-case font-medium md:text-lg"
-            style={{ fontFamily: "var(--font-serif)" }}
+            className="w-[50%] text-center mb-6 md:mb-10 leading-[1.1] opacity-75 normal-case font-medium"
+            style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(1rem, 0.3vw + 1.1rem, 1.45rem)" }}
           >
             I&apos;m an independent creative designer &amp; developer who builds
             custom digital experiences through modern typography and unique

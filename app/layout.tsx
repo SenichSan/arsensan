@@ -55,12 +55,12 @@ export default function RootLayout({
       className={`${montserrat.variable} ${playfairDisplay.variable} ${geist.variable} ${bebasNeue.variable}`}
     >
       <body className="font-sans antialiased bg-ivory text-graphite">
-        <NoiseOverlay />
         <CustomCursor />
         <SmoothScroll>
           <Navbar />
           {children}
         </SmoothScroll>
+        <NoiseOverlay />
       </body>
     </html>
   );
