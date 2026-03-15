@@ -3,6 +3,7 @@ import { Montserrat, Playfair_Display, Geist, Bebas_Neue, Space_Grotesk } from "
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 import NoiseOverlay from "@/components/NoiseOverlay";
+import IntroLoader from "@/components/IntroLoader";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 
@@ -65,8 +66,11 @@ export default function RootLayout({
       <body className="font-sans antialiased bg-ivory text-graphite">
         <CustomCursor />
         <SmoothScroll>
-          <Navbar />
-          {children}
+          <IntroLoader />
+          <div data-intro-wrapper>
+            <Navbar />
+            {children}
+          </div>
         </SmoothScroll>
         <NoiseOverlay />
       </body>

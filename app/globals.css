@@ -103,3 +103,40 @@
   animation: grain 1s steps(10) infinite;
   will-change: transform;
 }
+
+/* ========================================
+   INTRO LOADER — Dark Loading Screen
+   ======================================== */
+
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1C1917; /* graphite */
+  will-change: opacity;
+}
+
+.intro-loader-text {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #F5F0EB; /* ivory */
+  will-change: transform, opacity;
+}
+
+/* ── Accessibility: skip animation entirely ── */
+@media (prefers-reduced-motion: reduce) {
+  .intro-overlay {
+    display: none !important;
+  }
+
+  [data-intro-reveal],
+  [data-intro-nav-reveal],
+  [data-intro-logo] {
+    opacity: 1 !important;
+  }
+}

@@ -42,6 +42,9 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
       infinite: false,
     });
 
+    // Start in stopped state — IntroLoader will call lenis.start() after intro completes
+    instance.stop();
+
     setLenis(instance);
 
     return () => {

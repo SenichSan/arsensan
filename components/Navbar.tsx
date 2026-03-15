@@ -12,7 +12,7 @@ export default function Navbar() {
     <>
       {/* ── Progress Number Block (001) ── */}
       {/* (Вынесен из nav, как в оригинальном DOM) */}
-      <div className="absolute top-6 right-6 md:top-8 md:right-8 z-50 pointer-events-none">
+      <div className="absolute top-6 right-6 md:top-8 md:right-8 z-50 pointer-events-none" data-intro-nav-reveal style={{ opacity: 0 }}>
         <h5
           className="text-xs font-medium tracking-widest text-graphite-soft"
           style={{ fontFamily: "var(--font-sans)" }}
@@ -29,17 +29,20 @@ export default function Navbar() {
           <a
             href="#hero"
             data-cursor="hover"
+            data-intro-logo
             className="text-xs font-medium uppercase tracking-widest text-graphite leading-tight"
-            style={{ fontFamily: "var(--font-sans)" }}
+            style={{ fontFamily: "var(--font-sans)", opacity: 0 }}
           >
             ARSEN<br />SAN
           </a>
           <h5
             className="hidden md:block uppercase tracking-wider text-graphite-soft mt-0.5"
+            data-intro-nav-reveal
             style={{ 
               fontFamily: "var(--font-grotesk)", 
               fontWeight: 700,
-              fontSize: "clamp(0.6rem, 0.2vw + 0.65rem, 0.8125rem)" // ~13px on desktop, scaling between ~10px and ~13px
+              fontSize: "clamp(0.6rem, 0.2vw + 0.65rem, 0.8125rem)",
+              opacity: 0,
             }}
           >
             [AVAILABLE FOR WORK APRIL, 2026]
@@ -50,6 +53,8 @@ export default function Navbar() {
         <ul
           className="hidden lg:flex absolute left-1/2 -translate-x-1/2 top-6 md:top-8 gap-6 m-0 p-0 list-none"
           aria-label="Main navigation"
+          data-intro-nav-reveal
+          style={{ opacity: 0 }}
         >
           {NAV_LINKS.map(({ label, href }) => (
             <li key={href}>

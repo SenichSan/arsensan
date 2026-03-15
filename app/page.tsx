@@ -9,7 +9,8 @@ export default function Home() {
           
           <p
             className="w-[50%] text-center mb-6 md:mb-10 leading-[1.1] opacity-75 normal-case font-medium"
-            style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(1rem, 0.3vw + 1.1rem, 1.45rem)", textShadow: "0 -1px 0 rgba(255,255,255,0.6), 0 1px 2px rgba(28,25,23,0.08)" }}
+            data-intro-reveal
+            style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(1rem, 0.3vw + 1.1rem, 1.45rem)", textShadow: "0 -1px 0 rgba(255,255,255,0.6), 0 1px 2px rgba(28,25,23,0.08)", opacity: 0 }}
           >
             I&apos;m an independent creative designer &amp; developer who builds
             custom digital experiences through modern typography and unique
@@ -18,7 +19,7 @@ export default function Home() {
             work is rooted in purpose.
           </p>
 
-          <div className="w-full flex justify-center">
+          <div className="w-full flex justify-center" data-intro-reveal style={{ opacity: 0 }}>
             <h1
               className="w-full text-center text-[10vw] leading-[1] tracking-tighter uppercase font-black text-graphite"
               style={{ fontFamily: "var(--font-display)" }}
@@ -31,8 +32,9 @@ export default function Home() {
           <a
             href="#contact"
             data-cursor="hover"
+            data-intro-reveal
             className="mt-8 md:mt-12 group inline-flex items-center gap-3 rounded-full bg-graphite px-7 py-3 text-[11px] font-medium uppercase tracking-widest text-ivory transition-all duration-300 hover:bg-indigo"
-            style={{ fontFamily: "var(--font-sans)" }}
+            style={{ fontFamily: "var(--font-sans)", opacity: 0 }}
           >
             LET&apos;S TALK!
             <span className="inline-block transition-transform duration-300 group-hover:rotate-45">
@@ -45,19 +47,22 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 w-full flex justify-between items-end p-6 md:p-8 z-50 pointer-events-auto">
           <h5
             className="text-[11px] font-medium uppercase tracking-widest text-graphite"
-            style={{ fontFamily: "var(--font-sans)" }}
+            data-intro-reveal
+            style={{ fontFamily: "var(--font-sans)", opacity: 0 }}
           >
             ARSEN SAN
           </h5>
           <h5
             className="hidden md:block absolute left-1/2 -translate-x-1/2 bottom-6 md:bottom-8 text-[10px] uppercase tracking-wider text-graphite-soft opacity-50 text-center"
-            style={{ fontFamily: "var(--font-sans)" }}
+            data-intro-reveal
+            style={{ fontFamily: "var(--font-sans)", opacity: 0 }}
           >
             [FREELANCE CREATIVE DEVELOPER]
           </h5>
           <h5
             className="text-[11px] uppercase tracking-wider text-graphite-soft"
-            style={{ fontFamily: "var(--font-sans)" }}
+            data-intro-reveal
+            style={{ fontFamily: "var(--font-sans)", opacity: 0 }}
           >
             REMOTE, UA
           </h5>
