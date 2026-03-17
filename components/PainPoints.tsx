@@ -69,10 +69,10 @@ export default function PainPoints() {
     <section
       ref={sectionRef}
       id="problem"
-      className="relative w-full flex flex-col md:flex-row bg-background text-foreground"
+      className="relative w-full flex flex-col md:flex-row bg-surface-dark text-on-dark"
     >
       {/* ── Left Column — Sticky Visual / Scene ── */}
-      <div className="hidden md:flex sticky top-0 h-screen w-1/2 items-center justify-center border-r border-black/5">
+      <div className="hidden md:flex sticky top-0 h-screen w-1/2 items-center justify-center border-r border-on-dark/5">
 
         {/* Scene 0: Медленная загрузка */}
         {activeIndex === 0 && (
@@ -83,13 +83,13 @@ export default function PainPoints() {
         {activeIndex !== 0 && (
           <div className="flex flex-col items-center gap-3">
             <span
-              className="text-[12rem] font-black leading-none text-graphite/10 transition-all duration-500"
+              className="text-[12rem] font-black leading-none text-on-dark/10 transition-all duration-500"
               style={{ fontFamily: "var(--font-display)" }}
             >
               {activeIndex + 1}
             </span>
             <span
-              className="text-sm font-medium uppercase tracking-widest text-graphite-soft/60"
+              className="text-sm font-medium uppercase tracking-widest text-on-dark-muted/60"
               style={{ fontFamily: "var(--font-sans)" }}
             >
               Боль {activeIndex + 1}
@@ -115,7 +115,7 @@ export default function PainPoints() {
             >
               {/* Mobile-only index indicator */}
               <span
-                className="mb-4 block text-xs font-medium uppercase tracking-widest text-indigo md:hidden"
+                className="mb-4 block text-xs font-medium uppercase tracking-widest text-indigo-light md:hidden"
                 style={{ fontFamily: "var(--font-sans)" }}
               >
                 {String(index + 1).padStart(2, "0")} / {String(painPoints.length).padStart(2, "0")}
@@ -128,7 +128,7 @@ export default function PainPoints() {
                 {point.title}
               </h3>
               <p
-                className="mt-6 text-base md:text-lg leading-relaxed text-graphite-soft"
+                className="mt-6 text-base md:text-lg leading-relaxed text-on-dark-muted"
                 style={{ fontFamily: "var(--font-sans)" }}
               >
                 {point.description}
