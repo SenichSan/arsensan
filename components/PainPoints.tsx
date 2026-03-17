@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SlowLoadingVisual from "@/components/SlowLoadingVisual";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -72,20 +73,30 @@ export default function PainPoints() {
     >
       {/* ── Left Column — Sticky Visual / Scene ── */}
       <div className="hidden md:flex sticky top-0 h-screen w-1/2 items-center justify-center border-r border-black/5">
-        <div className="flex flex-col items-center gap-3">
-          <span
-            className="text-[12rem] font-black leading-none text-graphite/10 transition-all duration-500"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            {activeIndex + 1}
-          </span>
-          <span
-            className="text-sm font-medium uppercase tracking-widest text-graphite-soft/60 transition-opacity duration-500"
-            style={{ fontFamily: "var(--font-sans)" }}
-          >
-            Боль {activeIndex + 1}
-          </span>
-        </div>
+
+        {/* Scene 0: Медленная загрузка */}
+        {activeIndex === 0 && (
+          <SlowLoadingVisual isActive={true} />
+        )}
+
+        {/* Fallback: numbered placeholder for pains 1–3 */}
+        {activeIndex !== 0 && (
+          <div className="flex flex-col items-center gap-3">
+            <span
+              className="text-[12rem] font-black leading-none text-graphite/10 transition-all duration-500"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              {activeIndex + 1}
+            </span>
+            <span
+              className="text-sm font-medium uppercase tracking-widest text-graphite-soft/60"
+              style={{ fontFamily: "var(--font-sans)" }}
+            >
+              Боль {activeIndex + 1}
+            </span>
+          </div>
+        )}
+
       </div>
 
       {/* ── Right Column — Scrollable Text Blocks ── */}
