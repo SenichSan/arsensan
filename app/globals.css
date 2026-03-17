@@ -69,6 +69,8 @@
   body {
     @apply bg-background text-foreground;
   }
+
+
   html {
     @apply font-sans;
     --font-serif: "Didot", "Bodoni MT", "Times New Roman", serif;
@@ -139,4 +141,16 @@
   [data-intro-logo] {
     opacity: 1 !important;
   }
+}
+
+/* ========================================
+   GLOBAL SCROLLBAR HIDING
+   ======================================== */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }

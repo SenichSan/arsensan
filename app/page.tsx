@@ -1,3 +1,5 @@
+import PainPoints from "@/components/PainPoints";
+
 export default function Home() {
   return (
     <main className="relative flex flex-col items-center min-h-screen w-full bg-transparent text-graphite">
@@ -8,7 +10,7 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center w-full max-w-[95vw] z-10 pointer-events-auto">
           
           <p
-            className="w-[50%] text-center mb-6 md:mb-10 leading-[1.1] opacity-75 normal-case font-medium"
+            className="w-[50%] text-center mb-6 md:mb-10 leading-[1.1] opacity-75 normal-case"
             data-intro-reveal
             style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(1rem, 0.3vw + 1.1rem, 1.45rem)", textShadow: "0 -1px 0 rgba(255,255,255,0.6), 0 1px 2px rgba(28,25,23,0.08)", opacity: 0 }}
           >
@@ -70,18 +72,8 @@ export default function Home() {
 
       </div>
 
-      {/* ─── Блок 2: Идентификация (Боли) ─── */}
-      <section
-        id="problem"
-        className="min-h-screen flex items-center justify-center bg-surface-alt"
-      >
-        <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-heading font-semibold">
-            Проблема
-          </h2>
-          <p className="mt-4 text-on-surface-muted">Блок 2 — Идентификация болей</p>
-        </div>
-      </section>
+      {/* ─── Блок 2: Идентификация (Боли) — Sticky Scroll ─── */}
+      <PainPoints />
 
       {/* ─── Блок 3: Решение ─── */}
       <section

@@ -21,7 +21,13 @@ export default function IntroLoader() {
   );
 
   useEffect(() => {
-    if (hasRun.current) return;
+    if (hasRun.current) {
+      // If intro has already run (e.g. during Fast Refresh / Hot Reload),
+      // ensure the new Lenis instance is started and scroll is unlocked
+      lenis?.start();
+      document.documentElement.style.overflow = "";
+      return;
+    }
     hasRun.current = true;
 
     /* ── Respect prefers-reduced-motion ── */
