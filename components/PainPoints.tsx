@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SlowLoadingVisual from "@/components/SlowLoadingVisual";
+import AbandonedCartVisual from "@/components/AbandonedCartVisual";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -79,8 +80,13 @@ export default function PainPoints() {
           <SlowLoadingVisual isActive={true} />
         )}
 
-        {/* Fallback: numbered placeholder for pains 1–3 */}
-        {activeIndex !== 0 && (
+        {/* Scene 3: Сложный чекаут */}
+        {activeIndex === 3 && (
+          <AbandonedCartVisual isActive={true} />
+        )}
+
+        {/* Fallback: numbered placeholder for remaining pains */}
+        {activeIndex !== 0 && activeIndex !== 3 && (
           <div className="flex flex-col items-center gap-3">
             <span
               className="text-[12rem] font-black leading-none text-on-dark/10 transition-all duration-500"
