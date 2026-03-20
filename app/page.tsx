@@ -1,6 +1,7 @@
 import PainPoints from "@/components/PainPoints";
 import SolutionManifestoBlock from "@/components/SolutionManifestoBlock";
 import ServicesBlock from "@/components/ServicesBlock";
+import PortfolioBlock from "@/components/PortfolioBlock";
 
 export default function Home() {
   return (
@@ -84,17 +85,7 @@ export default function Home() {
       <ServicesBlock />
 
       {/* ─── Блок 5: Портфолио (Доказательства) ─── */}
-      <section
-        id="portfolio"
-        className="min-h-screen flex items-center justify-center"
-      >
-        <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-heading font-semibold">
-            Портфолио
-          </h2>
-          <p className="mt-4 text-on-surface-muted">Блок 5 — Кейсы и результаты</p>
-        </div>
-      </section>
+      <PortfolioBlock />
 
       {/* ─── Блок 6: Стек технологий (Tech Radar) ─── */}
       <section
