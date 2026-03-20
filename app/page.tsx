@@ -1,4 +1,5 @@
 import PainPoints from "@/components/PainPoints";
+import SolutionManifestoBlock from "@/components/SolutionManifestoBlock";
 
 export default function Home() {
   return (
@@ -76,17 +77,7 @@ export default function Home() {
       <PainPoints />
 
       {/* ─── Блок 3: Решение ─── */}
-      <section
-        id="solution"
-        className="min-h-[80vh] flex items-center justify-center"
-      >
-        <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-heading font-semibold">
-            Решение
-          </h2>
-          <p className="mt-4 text-on-surface-muted">Блок 3 — Элегантное решение</p>
-        </div>
-      </section>
+      <SolutionManifestoBlock />
 
       {/* ─── Блок 4: Услуги (Декомпозиция) ─── */}
       <section
