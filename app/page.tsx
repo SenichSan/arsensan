@@ -5,6 +5,7 @@ import ServicesBlock from "@/components/ServicesBlock";
 import PortfolioBlock from "@/components/PortfolioBlock";
 import TransformationBlock from "@/components/TransformationBlock";
 import ProcessTimelineBlock from "@/components/ProcessTimelineBlock";
+import TestimonialsBlock from "@/components/TestimonialsBlock";
 
 export default function Home() {
   return (
@@ -100,17 +101,7 @@ export default function Home() {
       <ProcessTimelineBlock />
 
       {/* ─── Блок 9: Социальные доказательства ─── */}
-      <section
-        id="testimonials"
-        className="min-h-[80vh] flex items-center justify-center"
-      >
-        <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-heading font-semibold">
-            Отзывы
-          </h2>
-          <p className="mt-4 text-on-surface-muted">Блок 9 — Цитаты клиентов</p>
-        </div>
-      </section>
+      <TestimonialsBlock />
 
       {/* ─── Блок 10: Манифест ─── */}
       <section
