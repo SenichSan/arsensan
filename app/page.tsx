@@ -3,6 +3,7 @@ import TechStackBlock from "@/components/TechStackBlock";
 import SolutionManifestoBlock from "@/components/SolutionManifestoBlock";
 import ServicesBlock from "@/components/ServicesBlock";
 import PortfolioBlock from "@/components/PortfolioBlock";
+import TransformationBlock from "@/components/TransformationBlock";
 
 export default function Home() {
   return (
@@ -92,17 +93,7 @@ export default function Home() {
       <TechStackBlock />
 
       {/* ─── Блок 7: Трансформация ─── */}
-      <section
-        id="transformation"
-        className="min-h-[80vh] flex items-center justify-center"
-      >
-        <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-heading font-semibold">
-            Трансформация
-          </h2>
-          <p className="mt-4 text-on-surface-muted">Блок 7 — До / После</p>
-        </div>
-      </section>
+      <TransformationBlock />
 
       {/* ─── Блок 8: Процесс ─── */}
       <section
