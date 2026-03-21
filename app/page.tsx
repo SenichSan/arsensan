@@ -4,6 +4,7 @@ import SolutionManifestoBlock from "@/components/SolutionManifestoBlock";
 import ServicesBlock from "@/components/ServicesBlock";
 import PortfolioBlock from "@/components/PortfolioBlock";
 import TransformationBlock from "@/components/TransformationBlock";
+import ProcessTimelineBlock from "@/components/ProcessTimelineBlock";
 
 export default function Home() {
   return (
@@ -96,17 +97,7 @@ export default function Home() {
       <TransformationBlock />
 
       {/* ─── Блок 8: Процесс ─── */}
-      <section
-        id="process"
-        className="min-h-screen flex items-center justify-center bg-surface-alt"
-      >
-        <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-heading font-semibold">
-            Процесс
-          </h2>
-          <p className="mt-4 text-on-surface-muted">Блок 8 — Таймлайн: Discovery → Launch</p>
-        </div>
-      </section>
+      <ProcessTimelineBlock />
 
       {/* ─── Блок 9: Социальные доказательства ─── */}
       <section
