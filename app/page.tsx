@@ -1,4 +1,5 @@
 import PainPoints from "@/components/PainPoints";
+import TechStackBlock from "@/components/TechStackBlock";
 import SolutionManifestoBlock from "@/components/SolutionManifestoBlock";
 import ServicesBlock from "@/components/ServicesBlock";
 import PortfolioBlock from "@/components/PortfolioBlock";
@@ -87,18 +88,8 @@ export default function Home() {
       {/* ─── Блок 5: Портфолио (Доказательства) ─── */}
       <PortfolioBlock />
 
-      {/* ─── Блок 6: Стек технологий (Tech Radar) ─── */}
-      <section
-        id="tech-stack"
-        className="py-24 flex items-center justify-center bg-surface-alt"
-      >
-        <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-heading font-semibold">
-            Технологии
-          </h2>
-          <p className="mt-4 text-on-surface-muted">Блок 6 — Marquee / Tech Radar</p>
-        </div>
-      </section>
+      {/* ─── Блок 6: Спецификация (Tech Stack) ─── */}
+      <TechStackBlock />
 
       {/* ─── Блок 7: Трансформация ─── */}
       <section
