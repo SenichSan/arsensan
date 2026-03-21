@@ -61,9 +61,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${montserrat.variable} ${playfairDisplay.variable} ${geist.variable} ${bebasNeue.variable} ${spaceGrotesk.variable}`}
     >
-      <body className="font-sans antialiased bg-ivory text-graphite">
+      <body suppressHydrationWarning className="font-sans antialiased bg-ivory text-graphite">
         <CustomCursor />
         <SmoothScroll>
           <IntroLoader />

@@ -44,6 +44,10 @@ export default function ServicesBlock() {
     const isTouchDevice = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
     
     if (cursorRef.current && !isTouchDevice) {
+      // Принудительно устанавливаем 0 масштаб до первого ховера, 
+      // чтобы gsap.quickTo не сбросил Tailwind класс scale-0.
+      gsap.set(cursorRef.current, { scale: 0 });
+      
       xTo.current = gsap.quickTo(cursorRef.current, "x", { duration: 0.6, ease: "power3" });
       yTo.current = gsap.quickTo(cursorRef.current, "y", { duration: 0.6, ease: "power3" });
     }

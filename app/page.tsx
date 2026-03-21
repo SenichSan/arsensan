@@ -8,10 +8,10 @@ export default function Home() {
     <main className="relative flex flex-col items-center min-h-screen w-full bg-transparent text-graphite">
       {/* ── Landing Container (equivalent to page_landingContainer) ── */}
       <div className="relative w-full h-screen overflow-hidden pointer-events-none flex flex-col items-center justify-center">
-        
+
         {/* ── Central Content (equivalent to page_heading_and_button) ── */}
         <div className="flex flex-col items-center justify-center w-full max-w-[95vw] z-10 pointer-events-auto">
-          
+
           <p
             className="w-[50%] text-center mb-6 md:mb-10 leading-[1.1] opacity-75 normal-case"
             data-intro-reveal
