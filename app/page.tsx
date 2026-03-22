@@ -8,6 +8,7 @@ import ProcessTimelineBlock from "@/components/ProcessTimelineBlock";
 import TestimonialsBlock from "@/components/TestimonialsBlock";
 import ManifestoBlock from "@/components/ManifestoBlock";
 import ContactBlock from "@/components/ContactBlock";
+import FAQBlock from "@/components/FAQBlock";
 
 export default function Home() {
   return (
@@ -112,17 +113,7 @@ export default function Home() {
       <ContactBlock />
 
       {/* ─── Блок 12: FAQ ─── */}
-      <section
-        id="faq"
-        className="py-24 flex items-center justify-center"
-      >
-        <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-heading font-semibold">
-            FAQ
-          </h2>
-          <p className="mt-4 text-on-surface-muted">Блок 12 — Частые вопросы</p>
-        </div>
-      </section>
+      <FAQBlock />
 
       {/* ─── Блок 13: Контакт ─── */}
       <section
