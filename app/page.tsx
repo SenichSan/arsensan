@@ -7,6 +7,7 @@ import TransformationBlock from "@/components/TransformationBlock";
 import ProcessTimelineBlock from "@/components/ProcessTimelineBlock";
 import TestimonialsBlock from "@/components/TestimonialsBlock";
 import ManifestoBlock from "@/components/ManifestoBlock";
+import ContactBlock from "@/components/ContactBlock";
 
 export default function Home() {
   return (
@@ -108,17 +109,7 @@ export default function Home() {
       <ManifestoBlock />
 
       {/* ─── Блок 11: Интерактивный Checkout (Главный CTA) ─── */}
-      <section
-        id="checkout"
-        className="min-h-screen flex items-center justify-center bg-surface-dark text-on-dark"
-      >
-        <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-heading font-semibold">
-            Соберите проект
-          </h2>
-          <p className="mt-4 text-on-dark-muted">Блок 11 — Интерактивный Checkout</p>
-        </div>
-      </section>
+      <ContactBlock />
 
       {/* ─── Блок 12: FAQ ─── */}
       <section
