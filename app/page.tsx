@@ -1,3 +1,4 @@
+import SmartHeader from "@/components/SmartHeader";
 import PainPoints from "@/components/PainPoints";
 import TechStackBlock from "@/components/TechStackBlock";
 import SolutionManifestoBlock from "@/components/SolutionManifestoBlock";
@@ -15,6 +16,7 @@ import FooterBlock from "@/components/FooterBlock";
 export default function Home() {
   return (
     <main className="relative flex flex-col items-center min-h-screen w-full bg-transparent text-graphite">
+      <SmartHeader />
       {/* ── Landing Container (equivalent to page_landingContainer) ── */}
       <div className="relative w-full h-screen overflow-hidden pointer-events-none flex flex-col items-center justify-center">
 
