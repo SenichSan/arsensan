@@ -9,6 +9,7 @@ import TestimonialsBlock from "@/components/TestimonialsBlock";
 import ManifestoBlock from "@/components/ManifestoBlock";
 import ContactBlock from "@/components/ContactBlock";
 import FAQBlock from "@/components/FAQBlock";
+import DiscoveryCallBlock from "@/components/DiscoveryCallBlock";
 
 export default function Home() {
   return (
@@ -115,18 +116,8 @@ export default function Home() {
       {/* ─── Блок 12: FAQ ─── */}
       <FAQBlock />
 
-      {/* ─── Блок 13: Контакт ─── */}
-      <section
-        id="contact"
-        className="min-h-[60vh] flex items-center justify-center bg-surface-alt"
-      >
-        <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-heading font-semibold">
-            Контакт
-          </h2>
-          <p className="mt-4 text-on-surface-muted">Блок 13 — Связаться</p>
-        </div>
-      </section>
+      {/* ─── Блок 13: Контакт (Discovery Call) ─── */}
+      <DiscoveryCallBlock />
 
       {/* ─── Блок 14: Футер ─── */}
       <footer
