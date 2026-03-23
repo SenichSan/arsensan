@@ -10,6 +10,7 @@ import ManifestoBlock from "@/components/ManifestoBlock";
 import ContactBlock from "@/components/ContactBlock";
 import FAQBlock from "@/components/FAQBlock";
 import DiscoveryCallBlock from "@/components/DiscoveryCallBlock";
+import FooterBlock from "@/components/FooterBlock";
 
 export default function Home() {
   return (
@@ -120,16 +121,7 @@ export default function Home() {
       <DiscoveryCallBlock />
 
       {/* ─── Блок 14: Футер ─── */}
-      <footer
-        id="footer"
-        className="py-16 flex items-center justify-center bg-surface-dark text-on-dark"
-      >
-        <div className="text-center">
-          <p className="text-sm text-on-dark-muted">
-            © {new Date().getFullYear()} Arsen San. Все права защищены.
-          </p>
-        </div>
-      </footer>
+      <FooterBlock />
     </main>
   );
 }
