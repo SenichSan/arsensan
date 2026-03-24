@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLenis } from "@/components/SmoothScroll"; // Подключаем контекст Lenis
 
 const navLinks = [
   { label: "Портфолио", href: "#portfolio" },
@@ -12,45 +12,61 @@ const navLinks = [
 
 export default function SmartHeader() {
   const headerRef = useRef<HTMLElement>(null);
+  
+  // Получаем инстанс Lenis напрямую из провайдера
+  const lenis = useLenis();
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    // Изначально скрыт за верхним краем
+    gsap.set(headerRef.current, { yPercent: -150, opacity: 0 });
 
-    const ctx = gsap.context(() => {
-      // Изначально скрыт — появляется при скролле вверх
-      gsap.set(headerRef.current, { yPercent: -150, opacity: 0 });
+    if (!lenis) return; // Ждем, пока Lenis инициализируется
 
-      ScrollTrigger.create({
-        start: "top -80",  // Начинаем после 80px скролла вниз
-        end: "max",
-        onUpdate: (self) => {
-          if (self.direction === 1) {
-            // Скролл ВНИЗ → скрыть
-            gsap.to(headerRef.current, {
-              yPercent: -150,
-              opacity: 0,
-              duration: 0.45,
-              ease: "power2.in",
-              overwrite: true,
-            });
-          } else {
-            // Скролл ВВЕРХ → показать
-            gsap.to(headerRef.current, {
-              yPercent: 0,
-              opacity: 1,
-              duration: 0.6,
-              ease: "power3.out",
-              overwrite: true,
-            });
-          }
-        },
-      });
-    });
+    let isVisible = false;
 
-    return () => ctx.revert();
-  }, []);
+    // Подписываемся на нативные события внутри Lenis
+    const handleScroll = (e: any) => {
+      // e.animatedScroll содержит математически точную позицию
+      // e.direction содержит направление (1 = вниз, -1 = вверх)
+      const currentY = e.animatedScroll || e.scroll || window.scrollY;
+      const direction = e.direction;
 
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+      // Первые 80px шапка скрыта
+      if (currentY < 80) {
+        if (isVisible) {
+          isVisible = false;
+          gsap.to(headerRef.current, { yPercent: -150, opacity: 0, duration: 0.2, ease: "power2.in", overwrite: "auto" });
+        }
+        return;
+      }
+
+      // Скролл вниз
+      if (direction === 1 && isVisible) {
+        isVisible = false;
+        gsap.to(headerRef.current, { yPercent: -150, opacity: 0, duration: 0.2, ease: "power2.in", overwrite: "auto" });
+      } 
+      // Скролл вверх
+      else if (direction === -1 && !isVisible) {
+        isVisible = true;
+        gsap.to(headerRef.current, { yPercent: 0, opacity: 1, duration: 0.5, ease: "power3.out", overwrite: "auto" });
+      }
+    };
+
+    // Вешаем слушатель прямо на ядро Lenis
+    lenis.on("scroll", handleScroll);
+
+    return () => {
+      lenis.off("scroll", handleScroll);
+    };
+  }, [lenis]);
+
+  const scrollToTop = () => {
+    if (lenis) {
+      lenis.scrollTo(0, { duration: 1.5, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   return (
     <header
