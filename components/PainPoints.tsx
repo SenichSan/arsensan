@@ -70,78 +70,70 @@ export default function PainPoints() {
     <section
       ref={sectionRef}
       id="problem"
-      className="relative w-full flex flex-col md:flex-row bg-surface-dark text-on-dark"
+      className="relative w-full bg-surface-dark text-on-dark py-20 md:py-40"
     >
-      {/* ── Left Column — Sticky Visual / Scene ── */}
-      <div className="hidden md:flex sticky top-0 h-screen w-1/2 items-center justify-center border-r border-on-dark/5">
+      <div className="mx-auto max-w-7xl px-5 md:px-20 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
 
-        {/* Scene 0: Медленная загрузка */}
-        {activeIndex === 0 && (
-          <SlowLoadingVisual isActive={true} />
-        )}
-
-        {/* Scene 3: Сложный чекаут */}
-        {activeIndex === 3 && (
-          <AbandonedCartVisual isActive={true} />
-        )}
-
-        {/* Fallback: numbered placeholder for remaining pains */}
-        {activeIndex !== 0 && activeIndex !== 3 && (
-          <div className="flex flex-col items-center gap-3">
-            <span
-              className="text-[12rem] font-black leading-none text-on-dark/10 transition-all duration-500"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              {activeIndex + 1}
-            </span>
-            <span
-              className="text-sm font-medium uppercase tracking-widest text-on-dark-muted/60"
-              style={{ fontFamily: "var(--font-sans)" }}
-            >
-              Боль {activeIndex + 1}
-            </span>
-          </div>
-        )}
-
-      </div>
-
-      {/* ── Right Column — Scrollable Text Blocks ── */}
-      <div className="w-full md:w-1/2">
-        {painPoints.map((point, index) => (
-          <div
-            key={point.id}
-            ref={(el) => {
-              textBlockRefs.current[index] = el;
-            }}
-            className="flex min-h-screen items-center justify-center px-8 md:px-16 lg:px-24"
-          >
-            <div
-              className="max-w-lg transition-opacity duration-500 ease-out"
-              style={{ opacity: activeIndex === index ? 1 : 0.3 }}
-            >
-              {/* Mobile-only index indicator */}
-              <span
-                className="mb-4 block text-xs font-medium uppercase tracking-widest text-indigo-light md:hidden"
-                style={{ fontFamily: "var(--font-sans)" }}
-              >
-                {String(index + 1).padStart(2, "0")} / {String(painPoints.length).padStart(2, "0")}
-              </span>
-
-              <h3
-                className="text-3xl md:text-4xl lg:text-5xl font-black uppercase leading-[1.1] tracking-tight"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                {point.title}
-              </h3>
-              <p
-                className="mt-6 text-base md:text-lg leading-relaxed text-on-dark-muted"
-                style={{ fontFamily: "var(--font-sans)" }}
-              >
-                {point.description}
-              </p>
+        {/* ── Left Column (Meta Zone) — Sticky Visual / Scene ── */}
+        <div className="hidden md:flex md:col-span-4 sticky top-0 h-screen flex-col items-start justify-center pr-8">
+          {/* Scene 0: Медленная загрузка */}
+          {activeIndex === 0 && (
+            <div className="w-full">
+              <SlowLoadingVisual isActive={true} />
             </div>
-          </div>
-        ))}
+          )}
+
+          {/* Scene 3: Сложный чекаут */}
+          {activeIndex === 3 && (
+            <div className="w-full">
+              <AbandonedCartVisual isActive={true} />
+            </div>
+          )}
+
+          {/* Fallback: numbered placeholder for remaining pains */}
+          {activeIndex !== 0 && activeIndex !== 3 && (
+            <div className="flex w-full flex-col items-start gap-4">
+              <span className="font-display text-[10rem] lg:text-[12rem] font-black leading-none text-on-dark/10 transition-all duration-500">
+                {activeIndex + 1}
+              </span>
+              <span className="font-sans text-sm font-medium uppercase tracking-widest text-on-dark-muted/60">
+                Боль {activeIndex + 1}
+              </span>
+            </div>
+          )}
+        </div>
+
+        {/* ── Right Column (Content Zone) — Scrollable Text Blocks ── */}
+        <div className="md:col-span-8 flex flex-col">
+          {painPoints.map((point, index) => (
+            <div
+              key={point.id}
+              ref={(el) => {
+                textBlockRefs.current[index] = el;
+              }}
+              className="flex min-h-screen flex-col justify-center py-20"
+            >
+              <div
+                className={`max-w-3xl transition-opacity duration-500 ease-out ${
+                  activeIndex === index ? "opacity-100" : "opacity-30"
+                }`}
+              >
+                {/* Mobile-only index indicator */}
+                <span className="mb-4 block font-sans text-xs font-medium uppercase tracking-widest text-indigo-light md:hidden">
+                  {String(index + 1).padStart(2, "0")} / {String(painPoints.length).padStart(2, "0")}
+                </span>
+
+                <h3 className="font-display text-3xl font-black uppercase leading-[1.1] tracking-tight md:text-5xl lg:text-6xl text-left">
+                  {point.title}
+                </h3>
+                <p className="font-sans mt-8 text-base leading-relaxed text-on-dark-muted md:text-lg text-left">
+                  {point.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   );

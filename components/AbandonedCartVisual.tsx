@@ -203,7 +203,7 @@ export default function AbandonedCartVisual({ isActive }: AbandonedCartVisualPro
   }, [isActive]);
 
   return (
-    <div ref={containerRef} className="relative w-full h-full flex items-center justify-center overflow-hidden bg-ivory">
+    <div ref={containerRef} className="relative w-full h-[640px] flex items-center justify-center overflow-hidden bg-ivory rounded-2xl shadow-xl border border-black/5">
       
       {/* Brutalist Invoice Card */}
       <div className="relative w-[340px] bg-ivory border border-black/20 p-8 flex flex-col font-mono text-graphite shadow-sm">

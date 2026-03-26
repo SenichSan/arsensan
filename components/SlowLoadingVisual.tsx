@@ -122,7 +122,7 @@ export default function SlowLoadingVisual({ isActive }: SlowLoadingVisualProps) 
   }, [isActive]);
 
   return (
-    <div className="relative w-[500px] h-[640px] rounded-2xl bg-[#F6F4F0] shadow-2xl overflow-hidden border border-black/5 transform origin-center scale-90 md:scale-100">
+    <div className="relative w-full h-[640px] rounded-2xl bg-[#F6F4F0] shadow-2xl overflow-hidden border border-black/5">
       
       {/* ── Progress Bar ── */}
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-graphite/5 z-20">
@@ -140,10 +140,10 @@ export default function SlowLoadingVisual({ isActive }: SlowLoadingVisualProps) 
           <div className="w-3 h-3 rounded-full bg-black/15 shadow-sm" />
           <div className="w-3 h-3 rounded-full bg-black/15 shadow-sm" />
         </div>
-        <div className="flex-1 flex justify-center">
-          <div className="w-64 h-6 rounded-md bg-black/5 flex items-center px-3 gap-2">
-            <div className="w-3 h-3 rounded-full bg-black/10" /> {/* dummy lock icon */}
-            <div className="w-32 h-2 rounded bg-black/10 mx-auto" />
+        <div className="flex-1 flex justify-center px-4">
+          <div className="w-full max-w-[16rem] h-6 rounded-md bg-black/5 flex items-center px-3 gap-2">
+            <div className="w-3 h-3 shrink-0 rounded-full bg-black/10" /> {/* dummy lock icon */}
+            <div className="w-full h-2 rounded bg-black/10 mx-auto" />
           </div>
         </div>
         <div className="w-16 flex justify-end">
@@ -242,16 +242,16 @@ export default function SlowLoadingVisual({ isActive }: SlowLoadingVisualProps) 
               </div>
 
               {/* Sizes */}
-              <div className="flex gap-2">
-                <div className="w-14 h-10 rounded border border-graphite/15" />
-                <div className="w-14 h-10 rounded border border-graphite/15 bg-graphite/5" />
-                <div className="w-14 h-10 rounded border border-graphite/15" />
-                <div className="w-14 h-10 rounded border border-graphite/15" />
+              <div className="flex flex-wrap gap-2">
+                <div className="w-10 lg:w-12 xl:w-14 h-10 shrink-0 rounded border border-graphite/15" />
+                <div className="w-10 lg:w-12 xl:w-14 h-10 shrink-0 rounded border border-graphite/15 bg-graphite/5" />
+                <div className="w-10 lg:w-12 xl:w-14 h-10 shrink-0 rounded border border-graphite/15" />
+                <div className="w-10 lg:w-12 xl:w-14 h-10 shrink-0 rounded border border-graphite/15" />
               </div>
             </div>
 
             {/* Actions (Stuck on loading) */}
-            <div className={`flex gap-3 mb-8 ${heavyPulsing ? "animate-pulse" : ""}`}>
+            <div className={`flex flex-col xl:flex-row gap-3 mb-8 ${heavyPulsing ? "animate-pulse" : ""}`}>
               <div className="w-14 h-14 rounded-md bg-graphite/10 flex items-center justify-center"> {/* Quantity */}
                  <div className="w-6 h-1 rounded-sm bg-graphite/20" />
               </div>
