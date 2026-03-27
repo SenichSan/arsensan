@@ -3,18 +3,32 @@
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLenis } from "@/components/SmoothScroll";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function SolutionManifestoBlock() {
   const containerRef = useRef<HTMLElement>(null);
+  const lenis = useLenis();
 
   useEffect(() => {
+    if (!lenis) return; // Ждем инициализации Lenis перед созданием триггеров
+
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 60%", // Запускаем анимацию, когда блок частично в зоне видимости
+          onEnter: () => {
+            if (lenis && containerRef.current) {
+              // Магнитный скролл: жестко и плавно захватываем управление
+              lenis.scrollTo(containerRef.current, { 
+                duration: 1.2, 
+                lock: true, 
+                force: true 
+              });
+            }
+          }
         },
       });
 
@@ -35,15 +49,15 @@ export default function SolutionManifestoBlock() {
     }, containerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [lenis]);
 
   return (
     <section
       ref={containerRef}
       id="solution"
       className="relative w-full h-screen bg-transparent flex items-center justify-center overflow-hidden"
-      data-bg="#F5F0EB"
-      data-text="#1C1917"
+      data-bg="#09090B"
+      data-text="#F5F0EB"
       style={{ fontFamily: "'Montserrat', 'Montserrat Fallback', sans-serif" }}
     >
       {/* Слой раскрывающегося фона (Свет) */}
