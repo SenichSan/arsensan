@@ -40,14 +40,24 @@ export default function ServicesBlock() {
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
 
   useEffect(() => {
-    // Проверка на устройства с touch/без мыши
+    // Вся анимация скейла строго привязана к React состоянию
+    if (cursorRef.current) {
+      if (activeMedia !== null) {
+        // overwrite: "auto" перезапишет ТОЛЬКО другие конфликтующие scale-анимации, не трогая x/y
+        gsap.to(cursorRef.current, { scale: 1, duration: 0.5, ease: "back.out(1.5)", overwrite: "auto" });
+      } else {
+        gsap.to(cursorRef.current, { scale: 0, duration: 0.3, ease: "power2.in", overwrite: "auto" });
+      }
+    }
+  }, [activeMedia]);
+
+  useEffect(() => {
     const isTouchDevice = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
     
     if (cursorRef.current && !isTouchDevice) {
-      // Принудительно устанавливаем 0 масштаб до первого ховера, 
-      // чтобы gsap.quickTo не сбросил Tailwind класс scale-0.
       gsap.set(cursorRef.current, { scale: 0 });
       
+      // Инициализация quickTo
       xTo.current = gsap.quickTo(cursorRef.current, "x", { duration: 0.6, ease: "power3" });
       yTo.current = gsap.quickTo(cursorRef.current, "y", { duration: 0.6, ease: "power3" });
     }
@@ -70,24 +80,16 @@ export default function ServicesBlock() {
     };
   }, []);
 
-  const handleMouseEnter = (index: number) => {
+  const handleItemEnter = (index: number) => {
     const isTouchDevice = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
     if (isTouchDevice) return;
-    
     setActiveMedia(index);
-    if (cursorRef.current) {
-      gsap.to(cursorRef.current, { scale: 1, duration: 0.5, ease: "back.out(1.5)" });
-    }
   };
 
-  const handleMouseLeave = () => {
+  const handleItemLeave = () => {
     const isTouchDevice = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
     if (isTouchDevice) return;
-
     setActiveMedia(null);
-    if (cursorRef.current) {
-      gsap.to(cursorRef.current, { scale: 0, duration: 0.3, ease: "power2.in" });
-    }
   };
 
   const handleItemClick = (index: number) => {
@@ -116,8 +118,8 @@ export default function ServicesBlock() {
             <li 
               key={service.id}
               className="group/item border-b border-graphite/10 py-8 md:py-12 relative flex flex-col justify-center transition-opacity duration-500 hover:!opacity-100 group-hover:opacity-30 cursor-pointer md:cursor-default"
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={handleMouseLeave}
+              onMouseEnter={() => handleItemEnter(index)}
+              onMouseLeave={handleItemLeave}
               onClick={() => handleItemClick(index)}
             >
               <div className="flex flex-col md:flex-row md:items-start w-full gap-4 md:gap-8 cursor-pointer">
