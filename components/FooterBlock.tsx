@@ -33,8 +33,8 @@ export default function FooterBlock() {
     <footer 
       id="footer"
       className="relative h-[85vh] md:h-[80vh] w-full bg-transparent pointer-events-none z-0 select-none"
-      data-bg="#09090B"
-      data-text="#F5F0EB"
+      data-bg="#F5F0EB"
+      data-text="#1C1917"
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
       <div className="fixed bottom-0 left-0 w-full h-[85vh] md:h-[80vh] flex flex-col justify-between pointer-events-auto">

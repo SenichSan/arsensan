@@ -73,8 +73,8 @@ export default function ProcessTimelineBlock() {
       id="process" 
       // Внешний контейнер на 400vh дает длинный путь для комфортного скроллинга 4х карточек
       className="relative w-full h-[400vh] bg-transparent select-none"
-      data-bg="#09090B"
-      data-text="#F5F0EB"
+      data-bg="#F5F0EB"
+      data-text="#1C1917"
     >
       {/* Липкий контейнер в 1 экран высотой. Обрезаем то, что уходит за экран. */}
       <div 

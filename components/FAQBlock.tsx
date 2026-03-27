@@ -35,8 +35,8 @@ export default function FAQBlock() {
       id="faq" 
       // Темный, глубокий фон и большие отступы сверху/снизу
       className="w-full bg-transparent py-24 md:py-32 flex justify-center select-none"
-      data-bg="#09090B"
-      data-text="#F5F0EB"
+      data-bg="#F5F0EB"
+      data-text="#1C1917"
     >
       {/* Ограниченный по ширине отцентрированный контейнер */}
       <div className="w-full max-w-5xl px-6 md:px-12 flex flex-col">

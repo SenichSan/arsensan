@@ -50,8 +50,8 @@ export default function TransformationBlock() {
       ref={containerRef} 
       id="transformation"
       className="relative w-full h-[300vh] bg-transparent select-none"
-      data-bg="#09090B"
-      data-text="#F5F0EB"
+      data-bg="#F5F0EB"
+      data-text="#1C1917"
     >
       {/* Залипающий контейнер ровно в 1 экран */}
       <div className="sticky top-0 w-full h-screen overflow-hidden">

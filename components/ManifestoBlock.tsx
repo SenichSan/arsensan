@@ -45,8 +45,8 @@ export default function ManifestoBlock() {
       id="manifesto" 
       // Концепция "Храм": Абсолютный минимум, 100vh высоты по центру.
       className="relative w-full min-h-screen bg-transparent flex flex-col items-center justify-center p-6 md:p-12 lg:p-24 overflow-hidden"
-      data-bg="#09090B"
-      data-text="#F5F0EB"
+      data-bg="#F5F0EB"
+      data-text="#1C1917"
     >
       {/* 
         Двухколоночный Editorial макет: Слева портрет, справа манифест с оптимальной длиной абзацев
