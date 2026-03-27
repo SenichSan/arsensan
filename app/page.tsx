@@ -12,13 +12,15 @@ import ContactBlock from "@/components/ContactBlock";
 import FAQBlock from "@/components/FAQBlock";
 import DiscoveryCallBlock from "@/components/DiscoveryCallBlock";
 import FooterBlock from "@/components/FooterBlock";
+import GlobalColorEngine from "@/components/GlobalColorEngine";
 
 export default function Home() {
   return (
-    <main className="relative flex flex-col items-center min-h-screen w-full bg-transparent text-graphite">
+    <main id="global-color-wrapper" className="relative flex flex-col items-center min-h-screen w-full bg-ivory text-graphite">
+      <GlobalColorEngine />
       <SmartHeader />
       {/* ── Landing Container (equivalent to page_landingContainer) ── */}
-      <div className="relative w-full h-screen overflow-hidden pointer-events-none flex flex-col items-center justify-center">
+      <section data-bg="#F5F0EB" data-text="#1C1917" className="relative w-full h-screen overflow-hidden pointer-events-none flex flex-col items-center justify-center bg-transparent">
 
         {/* ── Central Content (equivalent to page_heading_and_button) ── */}
         <div className="flex flex-col items-center justify-center w-full max-w-[95vw] z-10 pointer-events-auto">
@@ -84,7 +86,7 @@ export default function Home() {
           </h5>
         </div>
 
-      </div>
+      </section>
 
       {/* ─── Блок 2: Идентификация (Боли) — Sticky Scroll ─── */}
       <PainPoints />

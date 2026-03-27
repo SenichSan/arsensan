@@ -50,7 +50,9 @@ export default function DiscoveryCallBlock() {
       ref={containerRef}
       id="discovery"
       // Большие отступы, светлый теплый оттенок фона
-      className="relative w-full py-24 md:py-32 lg:py-48 bg-[#FDFBF7] text-zinc-900 overflow-hidden"
+      className="relative w-full py-24 md:py-32 lg:py-48 bg-transparent overflow-hidden"
+      data-bg="#F5F0EB"
+      data-text="#1C1917"
     >
       {/* 
         Асимметричный CSS Grid: 

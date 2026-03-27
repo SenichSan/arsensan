@@ -70,7 +70,9 @@ export default function TestimonialsBlock() {
       ref={containerRef}
       id="testimonials"
       // 300vh — идеальная высота для плавной смены 3 экранов-цитат
-      className="relative w-full h-[300vh] bg-[#F5F0EB] text-zinc-900 select-none"
+      className="relative w-full h-[300vh] bg-transparent select-none"
+      data-bg="#F5F0EB"
+      data-text="#1C1917"
     >
       {/* Липкий контейнер высотой в 1 экран */}
       <div className="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center">

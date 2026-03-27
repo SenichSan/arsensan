@@ -90,7 +90,9 @@ export default function PortfolioBlock() {
     <section 
       ref={containerRef}
       id="portfolio" 
-      className="relative w-full bg-[#F5F0EB] text-zinc-900 py-32 px-6 md:px-12 overflow-hidden"
+      className="relative w-full bg-transparent py-32 px-6 md:px-12 overflow-hidden"
+      data-bg="#F5F0EB"
+      data-text="#1C1917"
     >
       {/* Заголовок секции */}
       <div className="w-full flex flex-col items-start mb-24 md:mb-32 portfolio-case">

@@ -34,7 +34,9 @@ export default function TechStackBlock() {
   return (
     <section 
       id="tech-stack" 
-      className="relative w-full min-h-[90vh] lg:min-h-screen bg-[#0F0D0A] text-zinc-200 py-32 px-6 md:px-12 flex flex-col justify-center select-none"
+      className="relative w-full min-h-[90vh] lg:min-h-screen bg-transparent py-32 px-6 md:px-12 flex flex-col justify-center select-none"
+      data-bg="#09090B"
+      data-text="#F5F0EB"
     >
       <div className="w-full max-w-7xl mx-auto">
         

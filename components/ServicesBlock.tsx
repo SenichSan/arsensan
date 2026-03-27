@@ -98,7 +98,7 @@ export default function ServicesBlock() {
   };
 
   return (
-    <section id="services" className="relative w-full min-h-screen bg-[#F5F0EB] text-graphite py-24 px-6 md:px-12 cursor-default">
+    <section id="services" className="relative w-full min-h-screen bg-transparent py-24 px-6 md:px-12 cursor-default" data-bg="#F5F0EB" data-text="#1C1917">
       
       {/* Заголовок блока */}
       <div className="w-full mb-8">

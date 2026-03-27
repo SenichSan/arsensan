@@ -41,7 +41,9 @@ export default function SolutionManifestoBlock() {
     <section
       ref={containerRef}
       id="solution"
-      className="relative w-full h-screen bg-zinc-950 flex items-center justify-center overflow-hidden"
+      className="relative w-full h-screen bg-transparent flex items-center justify-center overflow-hidden"
+      data-bg="#09090B"
+      data-text="#F5F0EB"
       style={{ fontFamily: "'Montserrat', 'Montserrat Fallback', sans-serif" }}
     >
       {/* Слой раскрывающегося фона (Свет) */}

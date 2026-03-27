@@ -91,7 +91,9 @@ export default function ContactBlock() {
     <section 
       ref={containerRef}
       id="contact"
-      className="relative w-full min-h-screen bg-[#F5F0EB] text-[#0F0D0A] flex flex-col justify-center py-24 md:py-32 overflow-hidden"
+      className="relative w-full min-h-screen bg-transparent flex flex-col justify-center py-24 md:py-32 overflow-hidden"
+      data-bg="#F5F0EB"
+      data-text="#1C1917"
     >
       {/* 
         Сетка: 2 равные колонки на Desktop (lg:grid-cols-2), 

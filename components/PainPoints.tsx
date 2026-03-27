@@ -70,7 +70,9 @@ export default function PainPoints() {
     <section
       ref={sectionRef}
       id="problem"
-      className="relative w-full bg-surface-dark text-on-dark py-20 md:py-40"
+      className="relative w-full bg-transparent py-20 md:py-40"
+      data-bg="#09090B"
+      data-text="#F5F0EB"
     >
       <div className="mx-auto max-w-7xl px-5 md:px-20 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
 
