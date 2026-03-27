@@ -32,20 +32,12 @@ export default function SolutionManifestoBlock() {
         },
       });
 
-      tl.to(".solution-bg", {
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        ease: "power2.inOut",
-        duration: 1.2,
-      }).to(
-        ".reveal-text",
-        {
-          y: "0%",
-          stagger: 0.1,
-          ease: "power3.out",
-          duration: 1,
-        },
-        "-=0.6" // Начинаем текстовую анимацию чуть раньше для динамики
-      );
+      tl.to(".reveal-text", {
+        y: "0%",
+        stagger: 0.1,
+        ease: "power3.out",
+        duration: 1,
+      });
     }, containerRef);
 
     return () => ctx.revert();
@@ -56,18 +48,10 @@ export default function SolutionManifestoBlock() {
       ref={containerRef}
       id="solution"
       className="relative w-full h-screen bg-transparent flex items-center justify-center overflow-hidden"
-      data-bg="#09090B"
-      data-text="#F5F0EB"
+      data-bg="#F5F0EB"
+      data-text="#1C1917"
       style={{ fontFamily: "'Montserrat', 'Montserrat Fallback', sans-serif" }}
     >
-      {/* Слой раскрывающегося фона (Свет) */}
-      <div
-        className="solution-bg absolute inset-0 bg-[#F5F0EB] w-full h-full origin-center"
-        style={{
-          clipPath: "polygon(0% 49%, 100% 49%, 100% 51%, 0% 51%)",
-        }}
-      ></div>
-
       {/* Контентный слой (Z-Паттерн) */}
       <div className="solution-content relative w-full h-full max-w-screen-2xl mx-auto pointer-events-none">
         
